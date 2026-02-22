@@ -7,7 +7,7 @@ import tkinter.messagebox
 
 root =Tk()
 root.geometry("1350x750+0+0")
-root.title("Food Billing System")
+root.title("Restaurent Billing System")
 root.configure(background='cornsilk2')
 
 Tops = Frame(root,bg='cornsilk2',bd=20,pady=5,relief=RIDGE)
@@ -631,4 +631,5 @@ btnDiv=Button(Cal_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),widt
 
 
 root.mainloop()
+
 
