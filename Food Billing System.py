@@ -42,7 +42,6 @@ Drinks_F=Frame(MenuFrame,bg='cornsilk2',bd=4,relief=RIDGE)
 Drinks_F.pack(side=LEFT)
 Food_F=Frame(MenuFrame,bg='cornsilk2',bd=4,relief=RIDGE)
 Food_F.pack(side=RIGHT)
-###################################################variables################################################
 
 var1=IntVar()
 var2=IntVar()
@@ -111,7 +110,6 @@ E_Cake.set("0")
 
 DateofOrder.set(time.strftime("%d/%m/%y"))
 
-##########################################Function Declaration####################################################
 
 def iExit():
     iExit=tkinter.messagebox.askyesno("Exit Restaurant System","Confirm if you want to exit")
@@ -402,7 +400,6 @@ def Receipt():
     txtReceipt.insert(END,'Service Charge:\t\t\t\t'+ ServiceCharge.get()+'\nTotal Cost:\t\t\t\t'+str(TotalCost.get())+"\n")
 
 
-#########################################Drinks####################################################################
 Sprite=Checkbutton(Drinks_F,text='Sprite',variable=var1,onvalue=1,offvalue=0,font=('arial',18,'bold'),
                     bg='cornsilk2',command=chkSprite).grid(row=0,sticky=W)
 Pepsi=Checkbutton(Drinks_F,text='Pepsi',variable=var2,onvalue=1,offvalue=0,font=('arial',18,'bold'),
@@ -419,7 +416,6 @@ CocaCola=Checkbutton(Drinks_F,text='CocaCola',variable=var7,onvalue=1,offvalue=0
                     bg='cornsilk2',command=chk_CocaCola).grid(row=6,sticky=W)
 ColdCoffee=Checkbutton(Drinks_F,text='ColdCoffee',variable=var8,onvalue=1,offvalue=0,font=('arial',18,'bold'),
                     bg='cornsilk2',command=chk_ColdCoffee).grid(row=7,sticky=W)
-##############################################Drink Entry###############################################################
 
 txtSprite = Entry(Drinks_F,font=('arial',16,'bold'),bd=8,width=6,justify=LEFT,state=DISABLED
                         ,textvariable=E_Sprite)
@@ -452,7 +448,6 @@ txtCocaCola.grid(row=6,column=1)
 txtColdCoffee = Entry(Drinks_F,font=('arial',16,'bold'),bd=8,width=6,justify=LEFT,state=DISABLED
                         ,textvariable=E_ColdCoffee)
 txtColdCoffee.grid(row=7,column=1)
-#############################################Foods######################################################################
 
 PaneerTikka = Checkbutton(Food_F,text="PaneerTikka\t\t\t ",variable=var9,onvalue = 1, offvalue=0,
                         font=('arial',16,'bold'),bg='cornsilk2',command=chk_PaneerTikka).grid(row=0,sticky=W)
@@ -470,7 +465,8 @@ Noodles = Checkbutton(Food_F,text="Noodles ",variable=var15,onvalue = 1, offvalu
                         font=('arial',16,'bold'),bg='cornsilk2',command=chk_Noodles).grid(row=6,sticky=W)
 Cake = Checkbutton(Food_F,text="Cake ",variable=var16,onvalue = 1, offvalue=0,
                         font=('arial',16,'bold'),bg='cornsilk2',command=chk_Cake).grid(row=7,sticky=W)
-################################################Entry Box For Cake##########################################################
+
+#Entry Box For Cake
 txtPaneerTikka=Entry(Food_F,font=('arial',16,'bold'),bd=8,width=6,justify=LEFT,state=DISABLED,
                         textvariable=E_PaneerTikka)
 txtPaneerTikka.grid(row=0,column=1)
@@ -502,7 +498,8 @@ txtNoodles.grid(row=6,column=1)
 txtCake=Entry(Food_F,font=('arial',16,'bold'),bd=8,width=6,justify=LEFT,state=DISABLED,
                         textvariable=E_Cake)
 txtCake.grid(row=7,column=1)
-###########################################ToTal Cost################################################################################
+
+#ToTal Cost
 lblCostofDrinks=Label(Cost_F,font=('arial',14,'bold'),text='Cost of Drinks\t',bg='cornsilk2',
                 fg='black',justify=CENTER)
 lblCostofDrinks.grid(row=0,column=0,sticky=W)
@@ -523,8 +520,8 @@ lblServiceCharge.grid(row=2,column=0,sticky=W)
 txtServiceCharge=Entry(Cost_F,bg='white',bd=7,font=('arial',14,'bold'),
                         insertwidth=2,justify=RIGHT,textvariable=ServiceCharge)
 txtServiceCharge.grid(row=2,column=1)
-###########################################################Payment information###################################################
 
+#Payment information
 lblPaidTax=Label(Cost_F,font=('arial',14,'bold'),text='\tPaid Tax',bg='cornsilk2',bd=7,
                 fg='black',justify=CENTER)
 lblPaidTax.grid(row=0,column=2,sticky=W)
@@ -546,12 +543,12 @@ txtTotalCost=Entry(Cost_F,bg='white',bd=7,font=('arial',14,'bold'),
                         insertwidth=2,justify=RIGHT,textvariable=TotalCost)
 txtTotalCost.grid(row=2,column=3)
 
-#############################################RECEIPT###############################################################################
+#RECEIPT
 txtReceipt=Text(Receipt_F,width=46,height=12,bg='white',bd=4,font=('arial',12,'bold'))
 txtReceipt.grid(row=0,column=0)
 
 
-###########################################BUTTONS################################################################################
+#BUTTONS
 btnTotal=Button(Buttons_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),width=4,text='Total',
                         bg='cornsilk2',command=CostofItem).grid(row=0,column=0)
 btnReceipt=Button(Buttons_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),width=4,text='Receipt',
@@ -583,14 +580,12 @@ def btnEquals():
     operator = ""
 
 
-
-
-#############################################Calculator###############################################################################
+#Calculator
 txtDisplay=Entry(Cal_F,width=45,bg='white',bd=4,font=('arial',12,'bold'),justify=RIGHT,textvariable=text_Input)
 txtDisplay.grid(row=0,column=0,columnspan=4,pady=1)
 txtDisplay.insert(0,"0")
 
-###########################################CALCULATOR BUTTONS################################################################################
+#CALCULATOR BUTTONS
 btn7=Button(Cal_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),width=4,text='7',
                         bg='cornsilk2',command=lambda:btnClick(7)).grid(row=2,column=0)
 btn8=Button(Cal_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),width=4,text='8',
@@ -599,7 +594,7 @@ btn9=Button(Cal_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),width=
                         bg='cornsilk2',command=lambda:btnClick(9)).grid(row=2,column=2)
 btnAdd=Button(Cal_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),width=4,text='+',
                         bg='cornsilk2',command=lambda:btnClick('+')).grid(row=2,column=3)
-###########################################CALCULATOR BUTTONS################################################################################
+
 btn4=Button(Cal_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),width=4,text='4',
                         bg='cornsilk2',command=lambda:btnClick(4)).grid(row=3,column=0)
 btn5=Button(Cal_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),width=4,text='5',
@@ -608,7 +603,8 @@ btn6=Button(Cal_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),width=
                         bg='cornsilk2',command=lambda:btnClick(6)).grid(row=3,column=2)
 btnSub=Button(Cal_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),width=4,text='-',
                         bg='cornsilk2',command=lambda:btnClick('-')).grid(row=3,column=3)
-###########################################CALCULATOR BUTTONS################################################################################
+
+#CALCULATOR BUTTONS
 btn1=Button(Cal_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),width=4,text='1',
                         bg='cornsilk2',command=lambda:btnClick(1)).grid(row=4,column=0)
 btn2=Button(Cal_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),width=4,text='2',
@@ -617,7 +613,8 @@ btn3=Button(Cal_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),width=
                         bg='cornsilk2',command=lambda:btnClick(3)).grid(row=4,column=2)
 btnMulti=Button(Cal_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),width=4,text='*',
                         bg='cornsilk2',command=lambda:btnClick('*')).grid(row=4,column=3)
-###########################################CALCULATOR BUTTONS################################################################################
+
+#CALCULATOR BUTTONS
 btn0=Button(Cal_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),width=4,text='0',
                         bg='cornsilk2',command=lambda:btnClick(0)).grid(row=5,column=0)
 btnClear=Button(Cal_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),width=4,text='C',
@@ -634,3 +631,4 @@ btnDiv=Button(Cal_F,padx=16,pady=1,bd=7,fg='black',font=('arial',16,'bold'),widt
 
 
 root.mainloop()
+
